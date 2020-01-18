@@ -5,12 +5,16 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class SortFilterPipe implements PipeTransform {
 
-  transform(
+  transform (
     arr:any[], sortParam: string, filterParam: string, filterParamActicle: string
-    ) {
+  ) : any[]
+    {
     if (sortParam === undefined && filterParam === '' && filterParamActicle ===''){
       return arr;
     }
+
+    if (!arr) return [];
+
     if ( sortParam !== undefined){
       switch(sortParam){
         case "id2":
@@ -52,19 +56,29 @@ export class SortFilterPipe implements PipeTransform {
       }
     }
 
-    if (filterParam !== ''){
-      let filter = arr.filter(
-        ell => ell.name.toLowerCase().indexOf(filterParam.toLowerCase()) === 0);
-      return filter;
-    }
+    // if (filterParam !== ''){
+    //   let filter = arr.filter(
+    //     ell => ell.name.toLowerCase().indexOf(filterParam.toLowerCase()) === 0);
+    //   return filter;
+    // }
 
-    if (filterParamActicle !== ''){
-      let filter1 = arr.filter(
-        ell1 => ell1.aricle.toLowerCase().indexOf(filterParam.toLowerCase()) === 0);
-      return filter1;
-    }
+    // if (filterParamActicle !== ''){
+    //   let filter1 = arr.filter(
+    //     ell1 => ell1.aricle.toLowerCase().indexOf(filterParam.toLowerCase()) === 0);
+    //   return filter1;
+    // }
 
-    return arr;
+    return arr.filter(function (item) {
+      if (item.name.toLowerCase().includes(filterParam.toLowerCase()) === true) {
+        return true;
+      } else if (item.article.toLowerCase().includes(filterParam.toLowerCase()) === true) {
+        return true;
+      } else {
+        return false
+      }
+    });
+
+
   }
 
 }

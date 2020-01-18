@@ -8,7 +8,7 @@ import { CpuService } from 'src/app/shared/cpu.service';
 })
 export class CpuViewComponent implements OnInit {
 
-  CPU:any=[{}];
+  arr:any=[{}];
   sortParam: string = '';
   filterParam: string = '';
 
@@ -17,7 +17,7 @@ export class CpuViewComponent implements OnInit {
   ) { }
 
   async ngOnInit() {
-    this.CPU = await this.http.getCpu();
+    this.arr = await this.http.getCpu();
 
   }
 }

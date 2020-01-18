@@ -12,24 +12,23 @@
           <option value="price2">По убыванию цена</option>
         </select>
     </div>
-    <div class="forn-group">
+    <div class="form-group">
         <input type="text" class="col-3 form-control" placeholder="filtering" [(ngModel)]="filterParam">
     </div>
-    <div class="forn-group" style="margin-top: 20px;">
+    <!-- <div class="forn-group" style="margin-top: 20px;">
         <input type="text" class="col-3 form-control" placeholder="filtering" [(ngModel)]="filterParamArticle">
-    </div>
+    </div> -->
 
 
 
     <h2 class="header">VideoCards</h2>
-    <div class="row" *ngFor="let mother of mothers | sortFilter : sortParam : filterParam : filterParamArticle">
-
+    <div class="row m-1" *ngFor="let video of videos | sortFilter : sortParam : filterParam">
         <div class="col-2">  {{video.name}} </div>
         <div class="col-2"> {{video.article}} </div>
         <div class="col-2"> {{video.price | currency}} </div>    
         <div class="col-2"> {{video.chipset}} </div>
         <div class="col-2"> {{video.formFactor}} </div>
-        <button class="btn btn-small" [routerLink]="['edit', video.id]">Редактировать</button>
+        <button class="btn btn-sm btn-success" [routerLink]="['edit', video.id]">Редактировать</button>
       </div>
-      <button [routerLink]="['add']" class="btn ">Добавить</button>
+      <button [routerLink]="['add']" class="btn btn-primary">Добавить</button>
 </div>
