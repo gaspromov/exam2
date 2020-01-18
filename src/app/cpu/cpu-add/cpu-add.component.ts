@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
-import { CpuService } from 'src/app/shared/cpu.service';
+import { HttpService } from 'src/app/shared/http.service';
 
 @Component({
   selector: 'app-cpu-add',
@@ -14,7 +14,7 @@ export class CpuAddComponent implements OnInit {
 
 
   constructor(
-    private http: CpuService,
+    private http: HttpService,
     private router: Router
     ) { }
 

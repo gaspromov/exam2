@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { MotherService } from 'src/app/shared/mother.service';
+import { HttpService } from 'src/app/shared/http.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -14,7 +14,7 @@ export class MorherAddComponent implements OnInit {
 
 
   constructor(
-    private http: MotherService,
+    private http: HttpService,
     private router: Router
     ) { }
 

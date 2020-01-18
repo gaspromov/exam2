@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MotherService } from 'src/app/shared/mother.service';
+import { HttpService } from 'src/app/shared/http.service';
 
 @Component({
   selector: 'app-mother-view',
@@ -11,7 +11,7 @@ export class MotherViewComponent implements OnInit {
   filterParam: string = '';
 
   constructor(
-    private http: MotherService,
+    private http: HttpService,
   ) { }
 
   async ngOnInit() {

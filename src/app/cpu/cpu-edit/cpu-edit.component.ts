@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { CpuService } from 'src/app/shared/cpu.service';
+import { HttpService } from 'src/app/shared/http.service';
 import { FormGroup, Validators, FormControl } from '@angular/forms';
 
 @Component({
@@ -15,7 +15,7 @@ export class CpuEditComponent implements OnInit {
   cpu: any;
 
   constructor(
-    private http: CpuService,
+    private http: HttpService,
     private router: Router,
     private activeRouter: ActivatedRoute,
   ) { 

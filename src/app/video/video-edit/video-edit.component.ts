@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { VideoService } from 'src/app/shared/video.service';
+import { HttpService } from 'src/app/shared/http.service';
 
 @Component({
   selector: 'app-video-edit',
@@ -16,7 +16,7 @@ export class VideoEditComponent implements OnInit {
   video: any;
 
   constructor(
-    private http: VideoService,
+    private http: HttpService,
     private router: Router,
     private activeRouter: ActivatedRoute,
   ) { 

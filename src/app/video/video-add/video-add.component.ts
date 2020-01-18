@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { VideoService } from 'src/app/shared/video.service';
+import { HttpService } from 'src/app/shared/http.service';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
@@ -14,7 +14,7 @@ export class VideoAddComponent implements OnInit {
 
 
   constructor(
-    private http: VideoService,
+    private http: HttpService,
     private router: Router
     ) { }
 

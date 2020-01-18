@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { VideoService } from 'src/app/shared/video.service';
+import { HttpService } from 'src/app/shared/http.service';
 
 @Component({
   selector: 'app-video-view',
@@ -13,7 +13,7 @@ export class VideoViewComponent implements OnInit {
   filterParam: string = '';
 
   constructor(
-    private http: VideoService,
+    private http: HttpService,
   ) { }
 
   async ngOnInit() {

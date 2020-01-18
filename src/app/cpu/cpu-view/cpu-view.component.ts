@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CpuService } from 'src/app/shared/cpu.service';
+import { HttpService } from 'src/app/shared/http.service';
 
 @Component({
   selector: 'app-cpu-view',
@@ -13,7 +13,7 @@ export class CpuViewComponent implements OnInit {
   filterParam: string = '';
 
   constructor(
-    private http: CpuService,
+    private http: HttpService,
   ) { }
 
   async ngOnInit() {
