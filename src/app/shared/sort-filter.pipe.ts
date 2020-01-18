@@ -5,11 +5,9 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class SortFilterPipe implements PipeTransform {
 
-  transform (
-    arr:any[], sortParam: string, filterParam: string, filterParamActicle: string
-  ) : any[]
-    {
-    if (sortParam === undefined && filterParam === '' && filterParamActicle ===''){
+  transform (arr:any[], sortParam: string, filterParam: string) : any[] {
+
+    if (sortParam === undefined && filterParam === undefined){
       return arr;
     }
 
@@ -67,6 +65,7 @@ export class SortFilterPipe implements PipeTransform {
     //     ell1 => ell1.aricle.toLowerCase().indexOf(filterParam.toLowerCase()) === 0);
     //   return filter1;
     // }
+
 
     return arr.filter(function (item) {
       if (item.name.toLowerCase().includes(filterParam.toLowerCase()) === true) {
